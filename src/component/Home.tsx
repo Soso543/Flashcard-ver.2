@@ -42,7 +42,7 @@ export default function Home({ folders, cards, onSelectFolder, onAddFolder, onDe
             className="group relative bg-white border border-medical-100 rounded-2xl p-6 shadow-card hover:shadow-lg hover:border-medical-500 transition-all duration-300 cursor-pointer overflow-hidden"
           >
             <Folder className="absolute -right-4 -bottom-4 text-medical-50/50 w-24 h-24 rotate-12" />
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex justify-between items-start mb-4">
               <div className="p-3 bg-medical-50 rounded-xl text-medical-600 group-hover:bg-medical-500 group-hover:text-white transition-colors">
                 <Folder size={24} />
               </div>
