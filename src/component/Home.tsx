@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Folder, FolderPlus, X, Check } from 'lucide-react';
+import { Folder, FolderPlus, X, Trash2, Check } from 'lucide-react';
 import type { Flashcard } from '../types';
 
 interface Props {
@@ -7,9 +7,10 @@ interface Props {
   cards: Flashcard[];
   onSelectFolder: (folder: string) => void;
   onAddFolder: (name: string) => void;
+  onDeleteFolder: (name: string) => void;
 }
 
-export default function Home({ folders, cards, onSelectFolder, onAddFolder }: Props) {
+export default function Home({ folders, cards, onSelectFolder, onAddFolder, onDeleteFolder }: Props) {
   const [isCreating, setIsCreating] = useState(false);
   const [newFolderName, setNewFolderName] = useState('');
 
@@ -45,6 +46,17 @@ export default function Home({ folders, cards, onSelectFolder, onAddFolder }: Pr
               <div className="p-3 bg-medical-50 rounded-xl text-medical-600 group-hover:bg-medical-500 group-hover:text-white transition-colors">
                 <Folder size={24} />
               </div>
+              {/* ✅ Delete Folder Button */}
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevents opening the folder
+                    onDeleteFolder(folder);
+                  }}
+                  className="p-2 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all opacity-0 group-hover:opacity-100"
+                  title="Delete Folder"
+                >
+                  <Trash2 size={18} />
+                </button>
               <h3 className="text-xl font-bold text-medical-900 truncate">{folder}</h3>
             </div>
             <div className="flex justify-between items-center relative z-10">

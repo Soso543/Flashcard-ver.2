@@ -16,7 +16,7 @@ export default function App() {
   const [folders, setFolders] = useState<string[]>(() => {
     const savedFolders = localStorage.getItem('med_folders');
     // Default to 'General' if nothing is saved
-    return savedFolders ? JSON.parse(savedFolders) : ['URI II'];
+    return savedFolders ? JSON.parse(savedFolders) : ['Uncategorized'];
   });
 
   const [view, setView] = useState<'home' | 'folder' | 'revise'>('home');
@@ -59,6 +59,17 @@ export default function App() {
   const handleAddFolder = (newFolderName: string) => {
     if (!folders.includes(newFolderName)) {
       setFolders(prev => [...prev, newFolderName]);
+    }
+  };
+
+  const handleDeleteFolder = (folderName: string) => {
+    const confirmMessage = `Are you sure you want to delete the folder "${folderName}"? This will delete all cards inside it.`;
+
+    if (window.confirm(confirmMessage)) {
+      // Remove the folder name from the list
+      setFolders(prev => prev.filter(f => f !== folderName));
+      // Remove all cards that belong to that specific folder
+      setCards(prev => prev.filter(c => c.folder === folderName ? false : true));
     }
   };
 
@@ -122,7 +133,8 @@ export default function App() {
             folders={folders} 
             cards={cards} 
             onSelectFolder={handleSelectFolder} 
-            onAddFolder={handleAddFolder} 
+            onAddFolder={handleAddFolder}
+            onDeleteFolder={handleDeleteFolder}
           />
         )}
 
