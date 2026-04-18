@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Upload } from 'lucide-react';
 import Home from './component/Home';
 import FolderView from './component/FolderView';
@@ -6,14 +6,32 @@ import RevisionMode from './component/RevisionMode';
 import type { Flashcard } from './types';
 
 export default function App() {
-  // --- MASTER STATE ---
-  const [folders, setFolders] = useState<string[]>(['URI II']);
-  const [cards, setCards] = useState<Flashcard[]>([]);
-  
-  // --- NAVIGATION STATE ---
+  // --- 1. LOAD DATA ON STARTUP ---
+  // We use a "Lazy Initializer" function to check the browser's locker immediately.
+  const [cards, setCards] = useState<Flashcard[]>(() => {
+    const savedCards = localStorage.getItem('med_cards');
+    return savedCards ? JSON.parse(savedCards) : [];
+  });
+
+  const [folders, setFolders] = useState<string[]>(() => {
+    const savedFolders = localStorage.getItem('med_folders');
+    // Default to 'General' if nothing is saved
+    return savedFolders ? JSON.parse(savedFolders) : ['URI II'];
+  });
+
   const [view, setView] = useState<'home' | 'folder' | 'revise'>('home');
   const [currentFolder, setCurrentFolder] = useState<string | null>(null);
 
+  // --- 2. SAVE DATA AUTOMATICALLY ---
+  // This "Watcher" runs every time the 'cards' or 'folders' array changes.
+  useEffect(() => {
+    localStorage.setItem('med_cards', JSON.stringify(cards));
+  }, [cards]);
+
+  useEffect(() => {
+    localStorage.setItem('med_folders', JSON.stringify(folders));
+  }, [folders]);
+  
   // --- FOLDER & IMPORT LOGIC ---
   const handleImport = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
