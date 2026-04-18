@@ -237,7 +237,7 @@ export default function FolderView({
                 </div>
                 
                 {/* Action Buttons (Visible on Hover) */}
-                <div className="flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+                <div className="flex flex-col gap-2 shrink-0 border border-slate-50 pl-2">
                   <button 
                     onClick={() => startEdit(card)}
                     className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"

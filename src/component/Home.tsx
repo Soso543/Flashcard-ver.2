@@ -52,7 +52,7 @@ export default function Home({ folders, cards, onSelectFolder, onAddFolder, onDe
                     e.stopPropagation(); // Prevents opening the folder
                     onDeleteFolder(folder);
                   }}
-                  className="p-2 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all opacity-0 group-hover:opacity-100"
+                  className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all"
                   title="Delete Folder"
                 >
                   <Trash2 size={18} />
