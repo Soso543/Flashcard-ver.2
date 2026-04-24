@@ -151,11 +151,11 @@ export default function App() {
         )}
 
         {view === 'revise' && currentFolder && (
-          <RevisionMode 
-            cards={cards.filter(c => c.folder === currentFolder)} 
-            onExit={() => setView('folder')}
-          />
-        )}
+  <RevisionMode 
+    cards={cards.filter(c => c.folder === currentFolder)}
+    onExit={() => setView('folder')}
+  />
+)}
         
       </main>
     </div>
