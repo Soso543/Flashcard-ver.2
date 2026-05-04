@@ -69,7 +69,7 @@ export default function FolderView({
     if (!question.trim() || !answer.trim()) return;
 
     onEditCard({ 
-      id, 
+      id: String(id), 
       folder, 
       question: question.trim(), 
       answer: answer.trim(), 
