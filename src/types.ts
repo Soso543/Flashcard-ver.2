@@ -1,13 +1,11 @@
+// src/types.ts
 export interface Flashcard {
-  id: string | number;
+  id: string;
   folder: string;
   question: string;
   answer: string;
   image?: string;
-  selected?: boolean;
-  // Prepared for spaced repetition extension
-  nextReviewDate?: number; 
-  interval?: number;
+  isRevised?: boolean; // ✅ Add this line!
 }
 
 export type ViewState = 'home' | 'folder' | 'revise';

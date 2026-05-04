@@ -73,6 +73,25 @@ export default function App() {
     }
   };
 
+  // --- NEW EXPORT & REVISION MEMORY FUNCTIONS ---
+  const handleExport = () => {
+    const dataStr = JSON.stringify({ folders, cards }, null, 2);
+    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+    const exportFileDefaultName = 'medical-flashcards-backup.json';
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
+    linkElement.click();
+  };
+
+  const handleMarkRevised = (cardId: string) => {
+    setCards(prev => prev.map(c => c.id === cardId ? { ...c, isRevised: true } : c));
+  };
+
+  const handleResetFolderRevision = () => {
+    setCards(prev => prev.map(c => c.folder === currentFolder ? { ...c, isRevised: false } : c));
+  };
+
   const handleSelectFolder = (folderName: string) => {
     setCurrentFolder(folderName);
     setView('folder');
@@ -95,6 +114,7 @@ export default function App() {
     }
   };
 
+      
   return (
     <div className="min-h-screen text-slate-800">
       
@@ -113,14 +133,20 @@ export default function App() {
               </div>
               MedFlash
             </div>
-            
-            {/* Import Button */}
-            <label className="flex items-center gap-2 bg-medical-50 text-medical-700 px-5 py-2.5 rounded-xl font-bold hover:bg-medical-100 hover:shadow-sm cursor-pointer transition-all border border-medical-200">
+
+            <div className="flex items-center gap-2 md:gap-4">
+            <label className="cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-bold py-2 px-4 rounded-xl transition-all active:scale-95">
               <Upload size={18} />
               Import JSON
               <input type="file" accept=".json" onChange={handleImport} className="hidden" />
             </label>
-            
+{/* ✅ EXPORT BUTTON ADDED HERE */}
+          <button 
+            onClick={handleExport}
+            className="bg-medical-500 hover:bg-medical-600 text-white text-sm font-bold py-2 px-4 rounded-xl shadow-sm transition-all active:scale-95 shrink-0">
+            Export Backup
+          </button>
+          </div>
           </div>
         </header>
       )}
@@ -154,6 +180,8 @@ export default function App() {
   <RevisionMode 
     cards={cards.filter(c => c.folder === currentFolder)}
     onExit={() => setView('folder')}
+    onMarkRevised={handleMarkRevised}           // ✅ Added
+    onResetRevision={handleResetFolderRevision} // ✅ Added
   />
 )}
         
