@@ -33,27 +33,46 @@ export default function App() {
   }, [folders]);
   
   // --- FOLDER & IMPORT LOGIC ---
-  const handleImport = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+  const handleImport = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = (e) => {
+    
+    // This runs once the file is fully loaded
+    reader.onload = (event) => {
       try {
-        const importedCards: Flashcard[] = JSON.parse(e.target?.result as string);
-        setCards(prev => [...prev, ...importedCards]);
+        const fileContent = event.target?.result as string;
+        
+        // 1. Convert the text back into a JavaScript object
+        const parsedData = JSON.parse(fileContent);
 
-        // Automatically extract new folders from the imported cards
-        const importedFolderNames = Array.from(new Set(importedCards.map(c => c.folder)));
-        setFolders(prev => [...new Set([...prev, ...importedFolderNames])]);
-      } catch {
+        // 2. Verify it has the exact structure we exported
+        if (parsedData && Array.isArray(parsedData.folders) && Array.isArray(parsedData.cards)) {
+          
+          // Optional: Add a confirmation so you don't accidentally overwrite current work
+          if (window.confirm("Importing will replace your current flashcards. Continue?")) {
+            setFolders(parsedData.folders);
+            setCards(parsedData.cards);
+            alert("Backup imported successfully!");
+          }
+          
+        } else {
+          // It's a JSON file, but not OUR JSON file
+          alert("Invalid format: The file is missing folders or cards data.");
+        }
+      } catch (error) {
+        // It's not a valid JSON file at all
+        console.error("Import error:", error);
         alert("Invalid JSON file format. Please check your file.");
       }
     };
+
+    // 3. Actually read the file
     reader.readAsText(file);
     
-    // Reset the input so you can import the same file again if needed
-    event.target.value = '';
+    // 4. Reset the input field so you can upload the same file twice if needed
+    e.target.value = '';
   };
 
   const handleAddFolder = (newFolderName: string) => {
