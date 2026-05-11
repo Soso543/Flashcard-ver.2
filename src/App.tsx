@@ -158,7 +158,7 @@ const fetchRepoFiles = async () => {
   
   // Replace with your GitHub info
   const USER = "Soso543";
-  const REPO = "Flashcard-storage";
+  const REPO = "Flashcard-ver.2";
   const FOLDER_PATH = "storage"; // The folder where your JSONs live
 
   try {
