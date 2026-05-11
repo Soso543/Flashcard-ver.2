@@ -8,4 +8,7 @@ export interface Flashcard {
   isRevised?: boolean; // ✅ Add this line!
 }
 
-export type ViewState = 'home' | 'folder' | 'revise';
+export interface ExportData {
+  folders: string[];
+  cards: Flashcard[];
+}

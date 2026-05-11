@@ -15,29 +15,39 @@ export default function RevisionMode({ cards, onExit, onMarkRevised, onResetRevi
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   
-  // Separate the cards into two groups
   const unrevisedCards = cards.filter(c => !c.isRevised);
   const revisedCards = cards.filter(c => c.isRevised);
   
-  // Default to 10 if the *total* folder has 10+ cards, otherwise default to "all-cards"
-  const [reviseOption, setReviseOption] = useState<string>('Unrevised');
+  // Default strictly to "all-unrevised"
+  const [reviseOption, setReviseOption] = useState<string>('all-unrevised');
   const [customNum, setCustomNum] = useState<number>(Math.min(10, cards.length));
 
-  // --- SETUP LOGIC (The new Refill System) ---
+  // --- SETUP LOGIC ---
   const handleStartSession = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // 1. Figure out target number
+    // 1. BULLETPROOF NUMBER CALCULATION
     let targetNum = 0;
-    if (reviseOption === 'all-unrevised') targetNum = unrevisedCards.length;
-    else if (reviseOption === 'all-cards') targetNum = cards.length;
-    else if (reviseOption === 'custom') targetNum = customNum;
-    else targetNum = parseInt(reviseOption, 10);
+    
+    // Check for both old and new dropdown values just to be perfectly safe
+    if (reviseOption === 'all-unrevised' || reviseOption === 'all') {
+      targetNum = unrevisedCards.length;
+    } else if (reviseOption === 'all-cards') {
+      targetNum = cards.length;
+    } else if (reviseOption === 'custom') {
+      targetNum = customNum;
+    } else {
+      targetNum = parseInt(reviseOption, 10);
+    }
 
-    // Limit to the total number of cards available in the entire folder
+    // 🛑 SAFETY NET: If targetNum somehow became NaN (Not a Number), force it to a valid number
+    if (isNaN(targetNum) || targetNum <= 0) {
+      targetNum = unrevisedCards.length > 0 ? unrevisedCards.length : cards.length;
+    }
+
     const finalNum = Math.max(1, Math.min(targetNum, cards.length));
 
-    // 2. Helper function to shuffle an array
+    // 2. Shuffle Helper
     const shuffleArray = (array: Flashcard[]) => {
       const newArr = [...array];
       for (let i = newArr.length - 1; i > 0; i--) {
@@ -47,20 +57,18 @@ export default function RevisionMode({ cards, onExit, onMarkRevised, onResetRevi
       return newArr;
     };
 
-    // 3. Shuffle both pools independently
+    // 3. Shuffle & Build Deck
     const shuffledUnrevised = shuffleArray(unrevisedCards);
     const shuffledRevised = shuffleArray(revisedCards);
 
-    // 4. Build the final deck
-    // Take as many unrevised cards as we can up to the finalNum limit
     const selectedUnrevised = shuffledUnrevised.slice(0, finalNum);
-    
-    // Calculate if we need to "refill" with already revised cards
     const deficit = finalNum - selectedUnrevised.length;
     const selectedRevised = deficit > 0 ? shuffledRevised.slice(0, deficit) : [];
 
-    // Combine them: Unrevised go first, refilled go last!
+    // 4. Start Session
     setSessionCards([...selectedUnrevised, ...selectedRevised]);
+    setCurrentIndex(0);
+    setIsFlipped(false);
     setHasStarted(true);
   };
 
@@ -69,7 +77,6 @@ export default function RevisionMode({ cards, onExit, onMarkRevised, onResetRevi
     if (!isFlipped) {
       setIsFlipped(true); 
     } else {
-      // Mark as revised in global memory (if it isn't already)
       onMarkRevised(sessionCards[currentIndex].id);
       
       if (currentIndex < sessionCards.length - 1) {
@@ -118,28 +125,20 @@ export default function RevisionMode({ cards, onExit, onMarkRevised, onResetRevi
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">How many cards to study?</label>
                   
-                  {/* --- UPDATED DROPDOWN ORDER --- */}
-<select 
-  value={reviseOption}
-  onChange={(e) => setReviseOption(e.target.value)}
-  className="w-full border-2 border-slate-200 rounded-xl p-3 outline-none focus:border-medical-500 font-bold text-lg mb-3 bg-white cursor-pointer"
->
-  {/* 1. All Unrevised (First) */}
-  <option value="all-unrevised">Unrevised ({unrevisedCards.length})</option>
-
-  {/* 2. Entire Folder (Second) */}
-  <option value="all-cards">All ({cards.length})</option>
-
-  {/* 3. Numeric Increments */}
-  {[10, 20, 30, 40, 50].map(num => (
-    cards.length >= num && (
-      <option key={num} value={num.toString()}>{num} cards</option>
-    )
-  ))}
-
-  {/* 4. Custom (Last) */}
-  <option value="custom">Others...</option>
-</select>
+                  <select 
+                    value={reviseOption}
+                    onChange={(e) => setReviseOption(e.target.value)}
+                    className="w-full border-2 border-slate-200 rounded-xl p-3 outline-none focus:border-medical-500 font-bold text-lg mb-3 bg-white cursor-pointer"
+                  >
+                    <option value="all-unrevised">Unrevised ({unrevisedCards.length})</option>
+                    <option value="all-cards">All ({cards.length})</option>
+                    {[10, 20, 30, 40, 50].map(num => (
+                      cards.length >= num && (
+                        <option key={num} value={num.toString()}>{num} cards</option>
+                      )
+                    ))}
+                    <option value="custom">Others...</option>
+                  </select>
 
                   {reviseOption === 'custom' && (
                     <div className="animate-fade-in">
@@ -172,7 +171,7 @@ export default function RevisionMode({ cards, onExit, onMarkRevised, onResetRevi
               <button 
                 onClick={() => {
                   onResetRevision();
-                  setReviseOption(cards.length >= 10 ? '10' : 'all-cards');
+                  setReviseOption('all-unrevised');
                   setCustomNum(Math.min(10, cards.length));
                 }} 
                 className="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-4 rounded-xl transition-colors"
@@ -186,11 +185,15 @@ export default function RevisionMode({ cards, onExit, onMarkRevised, onResetRevi
     );
   }
 
+  // 🛑 CRASH PREVENTION: If sessionCards is empty for any reason, don't try to render!
+  if (sessionCards.length === 0) return null;
+  
+  const currentCard = sessionCards[currentIndex];
+  if (!currentCard) return null;
+
   // ==========================================
   // SCREEN 2: THE ACTIVE REVISION FLASHCARDS
   // ==========================================
-  const currentCard = sessionCards[currentIndex];
-
   return (
     <div className="fixed inset-0 bg-slate-900 text-white flex flex-col z-50 animate-fade-in">
       <div className="p-4 flex justify-between items-center bg-slate-800 z-50 shadow-md">
@@ -198,7 +201,6 @@ export default function RevisionMode({ cards, onExit, onMarkRevised, onResetRevi
           <span className="text-slate-400 font-bold bg-slate-900 px-4 py-1.5 rounded-full border border-slate-700">
             {currentIndex + 1} / {sessionCards.length}
           </span>
-          {/* ✅ Small visual cue so the user knows if they are studying a new or old card */}
           {currentCard.isRevised && (
             <span className="text-xs font-bold text-amber-500 bg-amber-500/10 px-2 py-1 rounded-lg">Review</span>
           )}
@@ -222,14 +224,12 @@ export default function RevisionMode({ cards, onExit, onMarkRevised, onResetRevi
         <div className="w-full max-w-2xl h-[450px]" style={{ perspective: '1200px' }}>
           <div className="relative w-full h-full transition-transform duration-500" style={{ transformStyle: 'preserve-3d', transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}>
             
-            {/* FRONT */}
             <div className="absolute inset-0 bg-white text-slate-800 rounded-[2.5rem] p-10 shadow-2xl flex flex-col items-center justify-center text-center" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(0deg)' }}>
               {currentCard.image && <img src={currentCard.image} className="max-h-48 rounded-xl mb-6 object-contain border border-slate-100" alt="" />}
               <div className="text-2xl md:text-3xl font-bold leading-snug mb-4">{currentCard.question}</div>
               <div className="mt-4 px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest bg-slate-100 text-slate-400">Question</div>
             </div>
 
-            {/* BACK */}
             <div className="absolute inset-0 bg-white text-slate-800 rounded-[2.5rem] p-10 shadow-2xl flex flex-col items-center justify-center text-center" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
               <div className="text-2xl md:text-3xl font-bold leading-snug mb-4">{currentCard.answer}</div>
               <div className="mt-4 px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest bg-medical-50 text-medical-600">Answer</div>
