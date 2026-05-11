@@ -1,0 +1,350 @@
+{
+  "folders": [
+    "RS II"
+  ],
+  "cards": [
+    {
+      "id": "1777247133060",
+      "folder": "RS II",
+      "question": "ใน pharyngeal arch มีอะไรบ้าง",
+      "answer": "Outer ectoderm, mesenchymal core (มี nerve, artery, cartilage), inner endoderm",
+      "isRevised": true
+    },
+    {
+      "id": "1777247467450",
+      "folder": "RS II",
+      "question": "Merkel’s cartilage และ stapes มาจาก pharyngeal arch ที่เท่าไหร่ตามลำดับ",
+      "answer": "Merkel’s cartilage: 1st/mandibular (+ Malleus, Incus)\nStapes: 2nd/hyoid (+ Reichert cartilage, styloid process & ligament)"
+    },
+    {
+      "id": "1777248235859",
+      "folder": "RS II",
+      "question": "2nd pharyngeal arch เจริญไปเป็น muscle อะไร และ muscle เหล่านั้นเลี้ยงด้วย nerve อะไร",
+      "answer": "Muscle of facial expression, facial nerve (CN VII)"
+    },
+    {
+      "id": "1777248420481",
+      "folder": "RS II",
+      "question": "Bronchial cleft cyst กับ thyroglossal cyst อันไหนอยู่ lateral อันไหนอยู่ midline",
+      "answer": "Lateral: bronchial cleft cyst,\nMidline: thyroglossal cyst",
+      "isRevised": true
+    },
+    {
+      "id": "1777248890829",
+      "folder": "RS II",
+      "question": "การรับประทานอะไรช่วยลด cleft lip & cleft palate ได้และต้องรับประทานช่วงใดของการตั้งครรภ์",
+      "answer": "Folic acid, before pregnancy & 1st trimester",
+      "isRevised": true
+    },
+    {
+      "id": "1777249094286",
+      "folder": "RS II",
+      "question": "Philtrum of upper lip, crest, and tip of nose เจริญมาจาก nasal prominence ใด",
+      "answer": "Medial nasal prominence"
+    },
+    {
+      "id": "1777252110019",
+      "folder": "RS II",
+      "question": "อะไรคือ most common cause of pulmonary hypoplasia",
+      "answer": "Congenital diaphragmatic hernia"
+    },
+    {
+      "id": "1777252787687",
+      "folder": "RS II",
+      "question": "PM2.5 จัดอยู่ใน group ไหนตาม The International Agency for Research on Cancer (IARC)",
+      "answer": "Group 1 (carcinogenic to humans)",
+      "isRevised": true
+    },
+    {
+      "id": "1777254327165",
+      "folder": "RS II",
+      "question": "อาชีพที่เสี่ยง exposure to asbestos มีอะไรบ้าง",
+      "answer": "Construction worker, shipbuilder, miner/miller, boilermaker, repair mechanic, auto part worker, hazardous waste worker",
+      "isRevised": true
+    },
+    {
+      "id": "1777254526933",
+      "folder": "RS II",
+      "question": "Chest x-ray มี irregular (linear) opacities, lower lobe predominance เป็น pneumoconiosis จากอะไร",
+      "answer": "Asbestos",
+      "isRevised": true
+    },
+    {
+      "id": "1777254813466",
+      "folder": "RS II",
+      "question": "Chest x-ray เจอ nodular opacities (upper 2/3, <10 mm), egg-shell calcification of lymph nodes เกิดจากอะไร",
+      "answer": "Silicosis",
+      "isRevised": true
+    },
+    {
+      "id": "1777362165930",
+      "folder": "RS II",
+      "question": "ผู้ป่วยเป็นคนเลี้ยงนก มาด้วยอาการไข้, ไอ, เหนื่อย, น้ำหนักลด, Chest-CT พบ diffuse fibrosis with honeycombing น่าจะเป็นโรคอะไร",
+      "answer": "Chronic hypersensitivity pneumonitis",
+      "isRevised": true
+    },
+    {
+      "id": "1777362802475",
+      "folder": "RS II",
+      "question": "Occupational asthma ใช้อะไร diagnosis บ้าง",
+      "answer": "1.spirometer (FEV1 increases > 12% or > 200 mL after receiving bronchodilator) 2.Methacholine challenge test (Positive) 3.Serial peak expiratory flow monitoring (peak flow drops > 20% at work)",
+      "isRevised": true
+    },
+    {
+      "id": "1777363122295",
+      "folder": "RS II",
+      "question": "Pleural fluid collection เก็บยังไง",
+      "answer": "1.ให้ผู้ป่วยนั่งเอนตัวไปด้านหน้า เอาแขนเท้าเต้า\n2.เข็มเข้าด้านบนของซี่โครง",
+      "isRevised": true
+    },
+    {
+      "id": "1777433022859",
+      "folder": "RS II",
+      "question": "ใช้ tube อะไรเก็บ pleural fluid ที่จะเอาไปตรวจ cell counts, differentiate cells",
+      "answer": "EDTA (ม่วง)",
+      "isRevised": true
+    },
+    {
+      "id": "1777433150923",
+      "folder": "RS II",
+      "question": "ใช้ tube อะไรเก็บ pleural fluid ที่จะเอาไปตรวจ Protein, LDH, Amylase, Triglyceride, Cholesterol",
+      "answer": "Plain (แดง), sodium heparin (เขียว)",
+      "isRevised": true
+    },
+    {
+      "id": "1777433417437",
+      "folder": "RS II",
+      "question": "Parameters อะไร (เช่น hydrostatic pressure, capillary permeability, …) และมีการเปลี่ยนแปลงอย่างไร ทำให้เกิด exudative pleural effusion",
+      "answer": "Increased capillary permeability (inflammation), decreased lymphatic reabsorption (tumor/neoplasms, trauma, surgery)"
+    },
+    {
+      "id": "1777433793934",
+      "folder": "RS II",
+      "question": "Chylus effusion (chylothorax) ต่างจาก pseudochylus effusion อย่างไร",
+      "answer": "Chylus มี triglycerides < 200, cholesterol > 200 แต่ pseudochylus มี triglycerides >= 110, cholesterol < 50",
+      "isRevised": true
+    },
+    {
+      "id": "1777781248399",
+      "folder": "RS II",
+      "question": "Exudate pleural fluid มีคุณสมบัติอย่างไรตาม Light’s criteria",
+      "answer": "At least one of the following:\n1.Pleural fluid protein/serum protein ratio > 0.5\n2.Pleural fluid LDH/serum LDH > 0.6\n3.Pleural fluid LDH > 2/3 of upper limit of normal serum LDH (ประมาณ > 200)",
+      "isRevised": true
+    },
+    {
+      "id": "1777783577207",
+      "folder": "RS II",
+      "question": "Glucose มีค่าอย่างไรใน exudate และ transudate pleural fluid ตามลำดับ",
+      "answer": "Exudate: glucose ต่ำ, transudate: glucose เท่า ๆ กับ serum",
+      "isRevised": true
+    },
+    {
+      "id": "1777783811023",
+      "folder": "RS II",
+      "question": "Positive Modified Allen Test แสดงว่ามีอะไร",
+      "answer": "Collateral circulation",
+      "isRevised": true
+    },
+    {
+      "id": "1777784567661",
+      "folder": "RS II",
+      "question": "Excess heparin ส่งผลยังไงกับ pH, P O2, P CO2 ใน ABG",
+      "answer": "ต่ำลงทั้ง 3 ค่า",
+      "isRevised": true
+    },
+    {
+      "id": "1777785309474",
+      "folder": "RS II",
+      "question": "Centor criteria มีอะไรบ้าง และใช้สำหรับเชื้ออะไร",
+      "answer": "1.อายุ 3-14 ปี\n2.tonsilar exudate\n3.swollen anterior cervical lymph nodes\n4.BT > 38 ํC\n5. No cough\n, ใช้กับ Group A Streptococcus"
+    },
+    {
+      "id": "1777785708381",
+      "folder": "RS II",
+      "question": "Group A Strep ให้ยาอะไร",
+      "answer": "Penicillin 10 days",
+      "isRevised": true
+    },
+    {
+      "id": "1777785944806",
+      "folder": "RS II",
+      "question": "Pleomorphic, club-shaped gram-positive bacilli, Arrangement: “Chinese letters” น่าจะเป็นเชื้ออะไร",
+      "answer": "Corynebacteria spp. (e.g. C. diphtheriae)",
+      "isRevised": true
+    },
+    {
+      "id": "1777786297028",
+      "folder": "RS II",
+      "question": "ผู้ป่วยที่ติดเชื้อ diphtheria จะมีอาการหรือลักษณะอย่างไร",
+      "answer": "Unvaccinated, severe tonsillitis/pharyngitis, gray-white pseudomembrane covering posterior pharynx (bleed when scraped), bull neck",
+      "isRevised": true
+    },
+    {
+      "id": "1777786573624",
+      "folder": "RS II",
+      "question": "Diphtheria รักษายังไง",
+      "answer": "Penicillin G + antitoxin, respiratory intervention (intubation/tracheostomy as needed), monitoring for cardiac complication",
+      "isRevised": true
+    },
+    {
+      "id": "1777786852046",
+      "folder": "RS II",
+      "question": "Gram-negative coccobacillus, โตบริเวณใกล้กับ Staph streak บน blood agar น่าจะเป็นเชื้ออะไร",
+      "answer": "H. influenzae",
+      "isRevised": true
+    },
+    {
+      "id": "1777786923588",
+      "folder": "RS II",
+      "question": "H. influenzae ใช้ยาอะไรรักษา",
+      "answer": "Amoxicillin/clavulanate, Third-generation cephalosporins",
+      "isRevised": true
+    },
+    {
+      "id": "1777787111423",
+      "folder": "RS II",
+      "question": "Optochin susceptibility test (P-disc) ใช้แยกเชื้ออะไร",
+      "answer": "S. Pneumoniae",
+      "isRevised": true
+    },
+    {
+      "id": "1777787424571",
+      "folder": "RS II",
+      "question": "คนไข้มาด้วยอาการมีน้ำมูก + ไข้ต่ำ, 1 สัปดาห์ต่อมาคนไข้มี paroxysmal coughing + inspiratory whoop คนไข้น่าจะติดเชื้ออะไร",
+      "answer": "Pertussis",
+      "isRevised": true
+    },
+    {
+      "id": "1777787599906",
+      "folder": "RS II",
+      "question": "วัคซีนคอตีบ-บาดทะยัก-ไอกรน ฉีดให้เด็กตอนเดือนที่เท่าไหร่บ้าง",
+      "answer": "เข็ม 1: 2 เดือน, เข็ม 2: 4 เดือน, เข็ม 4: 6 เดือน, กระตุ้น 1: 18 เดือน, กระตุ้น 2: 4-6 ปี, หลังจากนั้นฉีดตอน 11-12 ปี และต่อไปทุก 10 ปี",
+      "isRevised": true
+    },
+    {
+      "id": "1777822919992",
+      "folder": "RS II",
+      "question": "Sputum grade 5 มีคุณสมบัติอย่างไร",
+      "answer": "Epithelial cells < 10, WBC > 25",
+      "isRevised": true
+    },
+    {
+      "id": "1777863603635",
+      "folder": "RS II",
+      "question": "เชื้ออะไรทำให้เกิด otitis media ได้บ้าง",
+      "answer": "S. pneumoniae, H. influenzae, M. catarrhalis, GAS",
+      "isRevised": true
+    },
+    {
+      "id": "1777863777362",
+      "folder": "RS II",
+      "question": "Community-acquired pneumonia เกิดจากเชื้ออะไรบ้าง",
+      "answer": "Typical: S. pneumoniae, H. influenzae, GAS, S. aureus, anaerobes\n, Atypical: M. pneumoniae, C. pneumoniae, Legionella spp.\n, virus (in children 1 mth. - 5 yr.)"
+    },
+    {
+      "id": "1777863951952",
+      "folder": "RS II",
+      "question": "PISP ใช้ยาอะไรรักษาได้บ้าง",
+      "answer": "High-dose amoxicillin/ Ceftriaxone/ Vanco/ Levoflox",
+      "isRevised": true
+    },
+    {
+      "id": "1777866187120",
+      "folder": "RS II",
+      "question": "H. influenzae, M. Catarrhalis ให้ยาอะไรได้บ้าง",
+      "answer": "Amoxicillin-Clavulanate/ Ceftriaxone/ macrolide (azithromycin)",
+      "isRevised": true
+    },
+    {
+      "id": "1777866312145",
+      "folder": "RS II",
+      "question": "Mycloplasma pneumoniae ให้ยาอะไรได้บ้าง",
+      "answer": "Macrolides (azithromycin)/ doxycycline/ tetracycline/ levofloxacin",
+      "isRevised": true
+    },
+    {
+      "id": "1777868102228",
+      "folder": "RS II",
+      "question": "Community-acquired pneumonia ในผู้ใหญ่ให้ยาอะไรได้บ้าง",
+      "answer": "[Ampicillin/sulbactam/cefotaxime/ceftriaxone + macrolide/doxycycline], levoflox",
+      "isRevised": true
+    },
+    {
+      "id": "1777868581417",
+      "folder": "RS II",
+      "question": "Community-acquired pneumonia ในเด็กให้ยาอะไรได้บ้าง",
+      "answer": "Age < 1 mth.: [pen G/ampicillin IV + aminoglycoside], cefotaxime, cloxacilli (if suspect S. aureus)\nAge 1 mth. - 18 yr.: ampicillin/ cefotaxime/ ceftriaxone IV, macrolide PO (if suspect atypical pathogens)",
+      "isRevised": true
+    },
+    {
+      "id": "1777869013446",
+      "folder": "RS II",
+      "question": "Legionella เชื้ออยู่ไหน",
+      "answer": "ในเซลล์ monocytes/macrophages",
+      "isRevised": true
+    },
+    {
+      "id": "1777871887905",
+      "folder": "RS II",
+      "question": "Virus อะไรทำให้เกิด conjunctivitis ได้",
+      "answer": "Adenovirus",
+      "isRevised": true
+    },
+    {
+      "id": "1777874872921",
+      "folder": "RS II",
+      "question": "Fever, Headache, Myalgia, Fatigue, Sore throat, Dry cough, Runny nose น่าจะติดเชื้ออะไร",
+      "answer": "Influenza virus",
+      "isRevised": true
+    },
+    {
+      "id": "1777874937182",
+      "folder": "RS II",
+      "question": "Oseltamivir, Favipiravir, Baloxavir กลไกคืออะไรตามลำดับ",
+      "answer": "Inhibit viral release, RNA polymerase inhibitor, Cap-dependent endonuclease inhibitor",
+      "isRevised": true
+    },
+    {
+      "id": "1777877273603",
+      "folder": "RS II",
+      "question": "Hoarseness, Barking cough, Stridor น่าจะติดเชื้ออะไร",
+      "answer": "Parainfluenza virus",
+      "isRevised": true
+    },
+    {
+      "id": "1777878110207",
+      "folder": "RS II",
+      "question": "Palivizumab, Nirsevimab มีกลไกอะไรในการรักษา RSV",
+      "answer": "Palivizumab: monoclonal Ab against protein F, \nNirsevimab: long-acting monoclonal Ab against protein F",
+      "isRevised": true
+    },
+    {
+      "id": "1777878497412",
+      "folder": "RS II",
+      "question": "COVID-19 ให้ยาอะไรได้บ้าง",
+      "answer": "Remdesivir (IV), Molnupiravir, Favipiravir, Nirmatrelvir/ritonavir",
+      "isRevised": true
+    },
+    {
+      "id": "1777878646633",
+      "folder": "RS II",
+      "question": "the occurrence of disease cases in excess of normal expectancy in that population in that area หมายถึง level of disease ระดับใด",
+      "answer": "Epidemic/Outbreak",
+      "isRevised": true
+    },
+    {
+      "id": "1777879969075",
+      "folder": "RS II",
+      "question": "Nirsevimab (วัคซีน RSV) แนะนำฉีดในเด็กอายุเท่าไหร่ และฉีดช่วงไหนของปี",
+      "answer": "ฤดูกาลแรก: <= 8 เดือน (8-12 เดือน ก็ฉีดได้), ฤดูกาลที่ 2: <= 19 เดือน (19-24 เดือนก็ฉีดได้) สำหรับทารกที่เสี่ยงติด RSV, ฉีดช่วงมิถุนายน - ตุลาคม",
+      "isRevised": true
+    },
+    {
+      "id": "1777880364447",
+      "folder": "RS II",
+      "question": "Oseltamivir ควรให้ในกรณีที่เป็นไข้หวัดใหญ่มาไม่เกินกี่วัน",
+      "answer": "ไม่เกิน 2 วัน",
+      "isRevised": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "folders": [
+    "Hemato"
+  ],
+  "cards": [
+    {
+      "id": "1776565322043",
+      "folder": "Hemato",
+      "question": "What investigations represent primary hemostasis?",
+      "answer": "Tourniquet test, bleeding time, platelet (platelet counts, platelet aggregation study, PFA-100/PFA-200), vWF(vWF antigen, vWF activity, Factor VIII)"
+    },
+    {
+      "id": "1776601746304",
+      "folder": "Hemato",
+      "question": "What happens in primary hemostasis?",
+      "answer": "1.Exposure of subendothelial vWF and collagen\n2.platelet adhesion (GPIb/GPIX/GPV-vWF, GPVI-collagen)\n3.platelet activation & shape change (GPIIb/IIIa - fibrinogen/vWF) -> release cytokines for platelet activation (e.g. TXA2, ADP, serotonin) & aggregation (e.g. P2Y1, P2Y12) & inflammation\n4.platelet aggregation"
+    }
+  ]
+}
